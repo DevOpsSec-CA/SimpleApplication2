@@ -28,7 +28,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./SimpleApplication/node_modules
-          key: dependency-cache-${{ hashFiles('SimpleApplication/package-lock.json' }}
+          key: dependency-cache-${{ hashFiles('SimpleApplication/package-lock.json') }}
           restore-key: |
             dependency-cache-
 

@@ -34,15 +34,3 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Build docker image
-        run: docker build -t simple-app:latest .
-
-      - name: Save image
-        uses: actions/upload-artifact@v3
-        with:
-          name: simple-app-docker-image
-          path: /tmp/simple-app.tar
-
-      - name: Export image
-        run: docker save -o /tmp/simple-app.tar simple-app:latest

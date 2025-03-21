@@ -4,7 +4,7 @@ sudo npm install -g pm2
 # Stop runnings instances if necessary
 pm2 stop simple_app
 # Cd into application directory
-cd SimpleApplication/
+cd SimpleApplication2/
 # Install app dependencies
 npm install
 # Collects private key and certificate values from repository secrets

@@ -46,10 +46,10 @@ jobs:
           SERVER: ${{ secrets.SERVER }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
         run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ca-key.pem
-        chmod 600 ca-key.pem
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ca-key.pem
+          chmod 600 ca-key.pem
 
-        ssh -o StrictHostKeyChecking=no -i ca-key.pem ${{ env.EC2_USERNAME }}@${{ env.EC2_PUBLIC_DNS }} "export SERVER='${{ env.SERVER }}'; export PRIVATE_KEY='${{ env.PRIVATE_KEY }}'; rm -rf SimpleApplication2/; git clone https://github.com/DevOpsSec-CA/SimpleApplication2; source SimpleApplication2/deploy.sh"
+          ssh -o StrictHostKeyChecking=no -i ca-key.pem ${{ env.EC2_USERNAME }}@${{ env.EC2_PUBLIC_DNS }} "export SERVER='${{ env.SERVER }}'; export PRIVATE_KEY='${{ env.PRIVATE_KEY }}'; rm -rf SimpleApplication2/; git clone https://github.com/DevOpsSec-CA/SimpleApplication2; source SimpleApplication2/deploy.sh"
 
         - name: Remove RSA key
           run: rm ca-key.pem

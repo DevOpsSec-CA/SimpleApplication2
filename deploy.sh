@@ -14,4 +14,3 @@ echo $SERVER > server.crt
 export ENV=PROD
 # Start the application using pm2 under name simple_app
 pm2 start ./bin/www --name simple_app
-# I added the ssh key to GitHub so I am adding this line to push so I can trigger pipeline again and test deployment
